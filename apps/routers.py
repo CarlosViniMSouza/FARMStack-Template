@@ -2,13 +2,13 @@ from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 from fastapi import APIRouter, Body, Request, HTTPException, status
 
-from .models import TaskModel, UpdateTaskModel
+from .models import ModelTask, UpdateTaskModel
 
 router = APIRouter()
 
 
 @router.post("/", response_description="Add new task")
-async def create_task(request: Request, task: TaskModel = Body(...)):
+async def create_task(request: Request, task: ModelTask = Body(...)):
     task = jsonable_encoder(task)
 
     new_task = await request.app.mongodb["tasks"].insert_one(task)
@@ -68,3 +68,10 @@ async def delete_task(id: str, request: Request):
 
     raise HTTPException(status_code=404, detail=f"Task {id} not found")
     
+"""
+1 - POST /task/ - creates a new task.
+2 - GET /task/ - view all existing tasks.
+3 - GET /task/{id}/ - view a single task.
+4 - PUT /task/{id}/ - update a task.
+5 - DELETE /task/{id}/ - delete a task.
+"""

@@ -9,12 +9,12 @@ class ModelTask(BaseModel):
     completed: bool = False
 
     class Config:
-        allow_users_by_name = True
+        allow_population_by_field_name = True
         schema_extra = {
             "example": {
-                "id": "001",
-                "name": "Urgent Task",
-                "completed": False,
+                "id": "00010203-0405-0607-0809-0a0b0c0d0e0f",
+                "name": "My important task",
+                "completed": True,
             }
         }
 

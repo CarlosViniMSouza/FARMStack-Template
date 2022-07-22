@@ -1,4 +1,4 @@
 git add .
-git commit -m "README.md added | settings added | continue tomorrow"
+git commit -m "Cluster MongoDB connected! | Next Step: get started development ReactJS"
 git push -u origin main
 git status
