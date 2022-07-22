@@ -1,6 +1,4 @@
 git add .
-git commit -m "Learning FARM Stack Template"
-git branch -M main
-git remote add origin https://github.com/CarlosViniMSouza/FARMStack-Template.git
+git commit -m "README.md added | settings added | continue tomorrow"
 git push -u origin main
 git status
